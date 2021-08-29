@@ -190,7 +190,6 @@ def trip_duration_stats(df):
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
 
-    # TO DO: display total travel time
 
     total_travel_time = df['Trip Duration'].sum()
     total_travel_time = (str(int(total_travel_time//86400)) +
@@ -204,7 +203,6 @@ def trip_duration_stats(df):
     print('For the selected filters, the total travel time is : ' +
           total_travel_time + '.')
 
-    # TO DO: display mean travel time
 
     mean_travel_time = df['Trip Duration'].mean()
     mean_travel_time = (str(int(mean_travel_time//60)) + 'm ' +
@@ -222,22 +220,17 @@ def user_stats(df):
     print('\nCalculating User Stats...\n')
     start_time = time.time()
 
-    ## TO DO: Display counts of user types
     
     if 'User Type' in df.columns:
         print(' User type stats '.center(78, '-'))
         print(df['User Type'].value_counts())
         # print()
-
-    # TO DO: Display counts of gender
-
     if 'Gender' in df.columns:
         print(' Gender stats '.center(78, '-'))
         df['Gender'].replace(np.nan, 'not disclosed', inplace=True)
         print(df['Gender'].value_counts(dropna=False))
         # print()
 
-    # TO DO: Display earliest, most recent, and most common year of birth
     
     if 'Birth Year' in df.columns:
         print(' Age stats '.center(78, '-'))
